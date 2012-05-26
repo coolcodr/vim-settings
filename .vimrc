@@ -156,3 +156,4 @@ autocmd BufEnter * silent! lcd %:p:h
 
 " Toggle the file browser
 map <F2> <Esc>:NERDTreeToggle<CR>
+set clipboard=unnamed
