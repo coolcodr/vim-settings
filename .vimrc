@@ -150,10 +150,22 @@ nnoremap <C-L> :nohl<CR><C-L>
 
 "------------------------------------------------------------
 
-colorscheme torte
-autocmd VimEnter * NERDTree | wincmd p
 autocmd BufEnter * silent! lcd %:p:h
 
 " Toggle the file browser
 map <F2> <Esc>:NERDTreeToggle<CR>
 set clipboard=unnamed
+call pathogen#infect()
+
+syntax enable
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
+
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
+
+call togglebg#map("<F5>")
