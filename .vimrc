@@ -169,3 +169,5 @@ else
 endif
 
 call togglebg#map("<F5>")
+
+:set guifont=Menlo\ Regular:h14
