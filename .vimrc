@@ -157,11 +157,14 @@ map <F2> <Esc>:NERDTreeToggle<CR>
 set clipboard=unnamed
 call pathogen#infect()
 
-syntax enable
-set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
+"set t_Co=256
+set t_Co=16
 
+"syntax enable
+set background=dark
+"let g:solarized_termcolors=256
+"let g:solarized_degrade=1
+colorscheme solarized
 if has('gui_running')
     set background=light
 else
