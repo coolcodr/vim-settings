@@ -178,3 +178,4 @@ call togglebg#map("<F5>")
 " For word wrap
 :set formatoptions+=l
 :set lbr
+let NERDTreeShowHidden=1
