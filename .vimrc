@@ -157,13 +157,13 @@ map <F2> <Esc>:NERDTreeToggle<CR>
 set clipboard=unnamed
 call pathogen#infect()
 
-"set t_Co=256
+" set t_Co=256
 set t_Co=16
 
 "syntax enable
 set background=dark
-"let g:solarized_termcolors=256
-"let g:solarized_degrade=1
+" let g:solarized_termcolors=256
+" let g:solarized_degrade=1
 colorscheme solarized
 if has('gui_running')
     set background=light
@@ -174,3 +174,7 @@ endif
 call togglebg#map("<F5>")
 
 :set guifont=Menlo\ Regular:h14
+
+" For word wrap
+:set formatoptions+=l
+:set lbr
