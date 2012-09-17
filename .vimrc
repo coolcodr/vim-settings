@@ -93,12 +93,13 @@ set laststatus=2
 set confirm
 
 " Use visual bell instead of beeping when doing something wrong
-set visualbell
+" set visualbell
+set novb
 
 " And reset the terminal code for the visual bell.  If visualbell is set, and
 " this line is also included, vim will neither flash nor beep.  If visualbell
 " is unset, this does nothing.
-set t_vb=
+" set t_vb=
 
 " Enable use of the mouse for all modes
 set mouse=a
@@ -154,6 +155,8 @@ autocmd BufEnter * silent! lcd %:p:h
 
 " Toggle the file browser
 map <F2> <Esc>:NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
+
 set clipboard=unnamed
 call pathogen#infect()
 
@@ -173,9 +176,13 @@ endif
 
 call togglebg#map("<F5>")
 
-:set guifont=Menlo\ Regular:h14
-
+if has("gui_gtk2")
+    set guifont=Bitstream\ Vera\ Sans\ Mono\ Bold\ 11
+elseif has("gui_macvim")
+    set guifont=Menlo\ Regular:h14
+elseif has("gui_win32")
+    set guifont=Bitstream\ Vera\ Sans\ Mono:h12
+end
 " For word wrap
-:set formatoptions+=l
-:set lbr
-let NERDTreeShowHidden=1
+set formatoptions+=l
+set lbr
